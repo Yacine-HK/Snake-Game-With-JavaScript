@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.game-container {
+  width: 450px;
+  height: 450px;
+  background-color: #111;
+  display: grid;
+  grid-template-columns: repeat(21, 1fr);
+  grid-template-rows: repeat(21, 1fr);
+}
+
+.snake {
+  background-color: aqua;
+  border: 0.5px solid #111;
+}
+
+.food {
+  background-color: orange;
+}

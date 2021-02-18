@@ -26,8 +26,8 @@ function main(current) {
 
   renderTime = current
 
-  // update()
-  // draw()
+  update()
+  draw()
 }
 
 window.requestAnimationFrame(main)

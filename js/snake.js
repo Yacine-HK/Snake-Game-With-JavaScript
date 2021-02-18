@@ -5,7 +5,7 @@ export const SNAKE_SPEED = 10
 
 // Snake Position
 const snakeBody = [
-  { x: 11, y: 11 }
+  { x: 11, y: 11 },
 ]
 
 // The Mechanisme Of the Snake

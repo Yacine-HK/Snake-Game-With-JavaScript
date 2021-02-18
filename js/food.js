@@ -1,8 +1,10 @@
 import { onSnake, expandSnake } from "./snake.js"
+import { onWall } from "./wall.js"
 import { gridPos } from "./grid.js"
 
 // Snake Position Randomly
 let food = randomFoodPosition()
+let scoreUI = document.querySelector(".score span")
 // Add New Segment
 const EXPANSION_RATE = 1
 let score = 0
@@ -12,7 +14,7 @@ export function update() {
     expandSnake(EXPANSION_RATE)
     food = randomFoodPosition()
     score++
-    console.log(score)
+    scoreUI.innerHTML = score
   }
 }
 
@@ -27,8 +29,10 @@ export function draw(gameBoard) {
 
 function randomFoodPosition() {
   let newFoodPosition
-  if (newFoodPosition == null || onSnake(newFoodPosition)) {
+  while (newFoodPosition == null || onSnake(newFoodPosition) || onWall(newFoodPosition)) {
     newFoodPosition = gridPos()
   }
+  console.log("wall:", onWall(newFoodPosition))
+  console.log("snake:", onSnake(newFoodPosition))
   return newFoodPosition
 }

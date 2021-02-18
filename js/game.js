@@ -2,6 +2,7 @@
 import { draw as drawSnake, update as updateSnake, SNAKE_SPEED, getSneakHead, sneakIntersection } from "./snake.js"
 import { draw as drawFood, update as updateFood } from "./food.js"
 import { outsidGrid } from "./grid.js"
+import { draw as drawWall, onWall } from "./wall.js"
 
 // DOM Selection
 const gameBoard = document.querySelector(".game-container")
@@ -25,8 +26,8 @@ function main(current) {
 
   renderTime = current
 
-  update()
-  draw()
+  // update()
+  // draw()
 }
 
 window.requestAnimationFrame(main)
@@ -40,9 +41,10 @@ function update() {
 function draw() {
   gameBoard.innerHTML = ""
   drawSnake(gameBoard)
+  drawWall(gameBoard)
   drawFood(gameBoard)
 }
 
 function checkDeath() {
-  gameOver = outsidGrid(getSneakHead()) || sneakIntersection()
+  gameOver = outsidGrid(getSneakHead()) || sneakIntersection() || onWall(getSneakHead())
 }

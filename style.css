@@ -15,6 +15,7 @@ body {
   display: grid;
   grid-template-columns: repeat(21, 1fr);
   grid-template-rows: repeat(21, 1fr);
+  border: 5px solid #ffb63a;
 }
 
 .snake {
@@ -24,4 +25,23 @@ body {
 
 .food {
   background-color: orange;
+}
+
+.game-content {
+  position: relative;
+}
+
+.score {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  color: #ff0000;
+  font-weight: bold;
+  background: #ffe9c3;
+  padding: 5px;
+}
+
+.wall {
+  background: #fff;
 }

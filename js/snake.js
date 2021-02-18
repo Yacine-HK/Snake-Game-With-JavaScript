@@ -23,6 +23,16 @@ export function update() {
   snakeBody[0].y += inputDirection.y
 }
 
+// Get Sneak Head Function
+export function getSneakHead() {
+  return snakeBody[0]
+}
+
+// If the Sneake intersect with the body
+export function sneakIntersection() {
+  return onSnake(snakeBody[0], { igonreHead: true })
+}
+
 // Draw Snake
 export function draw(gameBoard) {
   snakeBody.forEach(segment => {
@@ -35,8 +45,11 @@ export function draw(gameBoard) {
 }
 
 // If The Snake Eat The Food
-export function onSnake(position) {
-  return snakeBody.some(segment => equalPosition(segment, position))
+export function onSnake(position, { igonreHead = false } = {}) {
+  return snakeBody.some((segment, index) => {
+    if (igonreHead && index === 0) return false
+    return equalPosition(segment, position)
+  })
 }
 // If The Snake Eat The Food
 function equalPosition(pos1, pos2) {

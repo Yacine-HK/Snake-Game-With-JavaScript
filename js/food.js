@@ -5,12 +5,14 @@ import { gridPos } from "./grid.js"
 let food = randomFoodPosition()
 // Add New Segment
 const EXPANSION_RATE = 1
-
+let score = 0
 // Food Position After Eating
 export function update() {
   if (onSnake(food)) {
     expandSnake(EXPANSION_RATE)
     food = randomFoodPosition()
+    score++
+    console.log(score)
   }
 }
 

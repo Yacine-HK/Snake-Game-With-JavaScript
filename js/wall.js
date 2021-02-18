@@ -1,39 +1,8 @@
-const wallBody = [
-  { x: 5, y: 19 },
-  { x: 5, y: 18 },
-  { x: 5, y: 17 },
-  { x: 5, y: 16 },
-  { x: 5, y: 15 },
-  { x: 5, y: 14 },
-  { x: 5, y: 13 },
-  { x: 5, y: 12 },
-  { x: 5, y: 11 },
-  { x: 5, y: 10 },
-  { x: 5, y: 9 },
-  { x: 5, y: 8 },
-  { x: 5, y: 7 },
-  { x: 5, y: 6 },
-  { x: 5, y: 5 },
-  { x: 5, y: 4 },
-  { x: 5, y: 3 },
-  { x: 17, y: 19 },
-  { x: 17, y: 18 },
-  { x: 17, y: 17 },
-  { x: 17, y: 16 },
-  { x: 17, y: 15 },
-  { x: 17, y: 14 },
-  { x: 17, y: 13 },
-  { x: 17, y: 12 },
-  { x: 17, y: 11 },
-  { x: 17, y: 10 },
-  { x: 17, y: 9 },
-  { x: 17, y: 8 },
-  { x: 17, y: 7 },
-  { x: 17, y: 6 },
-  { x: 17, y: 5 },
-  { x: 17, y: 4 },
-  { x: 17, y: 3 },
-]
+import { allMaps } from "./maps.js"
+
+// Wall Position
+const wallBody = allMaps.map1
+
 
 export function draw(gameBoard) {
   wallBody.forEach(seg => {
@@ -45,6 +14,7 @@ export function draw(gameBoard) {
   })
 }
 
+// If The Sneak Position AND Food Position === Wall Position
 export function onWall(position) {
   return wallBody.some(segment => equalPosition(segment, position))
 }

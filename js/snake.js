@@ -1,7 +1,6 @@
 import { getInputDirection } from "./input.js"
 
 // Snake Speed
-export const SNAKE_SPEED = 10
 
 // Snake Position
 const snakeBody = [
@@ -10,6 +9,7 @@ const snakeBody = [
 
 // The Mechanisme Of the Snake
 export function update() {
+  // export const SNAKE_SPEED = getSnakeSpeed()
   addSegments()
 
   let inputDirection = getInputDirection()

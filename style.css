@@ -45,3 +45,63 @@ body {
 .wall {
   background: #fff;
 }
+
+.overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #ff8558;
+  z-index: 10;
+  opacity: 0.8;
+}
+
+.config {
+  padding: 10px 40px;
+  background: #353535;
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+.config p.title {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.level p,
+.speed p {
+  margin-bottom: 0.5rem;
+}
+
+.config .level,
+.config .speed,
+.config p.title {
+  margin-bottom: 1rem;
+}
+
+.level .levels-box,
+.speed .speeds-box {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.levels-box span,
+.speeds-box span {
+  padding: 5px 10px;
+  background: chocolate;
+  cursor: pointer;
+}
+
+.play {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: orange;
+  padding: 5px 0;
+  cursor: pointer;
+}
